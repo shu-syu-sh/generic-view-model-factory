@@ -1,0 +1,33 @@
+/**
+ * Bintray release configuration
+ * */
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = POM_BINTRAY_NAME
+
+    publishedGroupId = 'com.shu-syu-sh'
+    libraryName = 'GenericViewModelFactory'
+    artifact = POM_ARTIFACT_ID
+    packagingType = POM_PACKAGING
+
+    libraryDescription = POM_DESCRIPTION
+
+    siteUrl = 'https://github.com/shu-syu-sh/generic-view-model-factory'
+    gitUrl = 'https://github.com/shu-syu-sh/generic-view-model-factory.git'
+
+    libraryVersion = POM_VERSION
+
+    developerId = 'shu-syu-sh'
+    developerName = 'Ryo Kobayashi'
+    developerEmail = 'f11c015k@gmail.com'
+
+    licenseName = 'Apache License 2.0'
+    licenseUrl = 'https://github.com/shu-syu-sh/generic-view-model-factory/LICENSE'
+    allLicenses = ["Apache License 2.0"]
+}
+
+// Set up the Android Maven publication.
+apply from: rootProject.file('jcenter/maven-install.gradle')
+
+// Publish on Bintray.
+apply from: rootProject.file('jcenter/bintray.gradle')
